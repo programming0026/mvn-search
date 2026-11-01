@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author linux
  */
-public class BLineal extends SearchBase {
+public class LinearSearch extends SearchBase {
 
     /**
      * Devuelve el índice de la primera coincidencia.

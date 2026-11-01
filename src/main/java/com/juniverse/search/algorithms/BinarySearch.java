@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author linux
  */
-public class BBinaria extends SearchBase {
+public class BinarySearch extends SearchBase {
 
     /**
      * Busca {@code key} (el arreglo debe estar ordenado).

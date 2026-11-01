@@ -6,12 +6,15 @@ import com.juniverse.search.algorithms.TypesSearch;
 import java.util.Arrays;
 import java.util.Random;
 
+import java.util.logging.Logger;
 /**
  * Busca valores (únicos y repetidos) con búsqueda binaria y lineal e imprime las posiciones.
  *
  * @author linux
  */
 public class Main {
+    private static final Logger LOGGER = AppLogger.get(Main.class);
+
 
     /**
      * Ejecuta las cuatro pruebas de búsqueda.
@@ -58,47 +61,47 @@ public class Main {
 
     /** Busca un valor y muestra su posición (ordena antes si el algoritmo es binario). */
     private static void search(TypesSearch type, String text, int[] nums, int key) {
-        SearchBase searchtBase = SearchFactory.createFactory(type);
-        System.out.println(text);
-        System.out.println("Datos introducidos:");
-        searchtBase.print(nums);
-        System.out.println("Numero a buscar: " + key);
+        SearchBase searchBase = SearchFactory.createFactory(type);
+        LOGGER.info(text);
+        LOGGER.info("Datos introducidos:");
+        searchBase.print(nums);
+        LOGGER.info("Numero a buscar: " + key);
         if (type != TypesSearch.LINEAR_SEARCH) {
             Arrays.sort(nums);
         }
-        int pos = searchtBase.search(nums, key);
+        int pos = searchBase.search(nums, key);
         if (pos >= 0) {
-            System.out.println("El numero " + nums[pos] + " se encontro en la posicion: " + (pos + 1));
-            searchtBase.print(nums, pos);
+            LOGGER.info("El numero " + nums[pos] + " se encontro en la posicion: " + (pos + 1));
+            searchBase.print(nums, pos);
         } else {
-            System.out.println("Valor no encotrando");
+            LOGGER.info("Valor no encotrando");
         }
         
     }
     
     /** Busca todas las apariciones de un valor y las muestra (ordena antes si el algoritmo es binario). */
     private static void searchRepeat(TypesSearch type, String text, int[] nums, int key) {
-        SearchBase searchtBase = SearchFactory.createFactory(type);
-        System.out.println(text);
-        System.out.println("Datos introducidos:");
-        searchtBase.print(nums);
-        System.out.println("Numero a buscar: " + key);
+        SearchBase searchBase = SearchFactory.createFactory(type);
+        LOGGER.info(text);
+        LOGGER.info("Datos introducidos:");
+        searchBase.print(nums);
+        LOGGER.info("Numero a buscar: " + key);
         if (type != TypesSearch.LINEAR_SEARCH) {
             Arrays.sort(nums);
         }
         
-        Integer[] result = searchtBase.searchList(nums, key);
+        Integer[] result = searchBase.searchList(nums, key);
 
         if (result.length > 0) {
             for (Integer index : result) {
-                System.out.println("El numero " + nums[index] + " se encontro en la posicion: " + (index + 1));
+                LOGGER.info("El numero " + nums[index] + " se encontro en la posicion: " + (index + 1));
             }
         } else {
-            System.out.println("El valor no existe");
+            LOGGER.info("El valor no existe");
         }
 
-        System.out.println("\nLos valores en el array son los siguientes: ");
-        searchtBase.print(nums, result);
+        LOGGER.info("\nLos valores en el array son los siguientes: ");
+        searchBase.print(nums, result);
     }
     
 }

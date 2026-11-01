@@ -20,10 +20,10 @@ public final class SearchFactory {
     public static SearchBase createFactory(TypesSearch type) {
         switch (type) {            
             case BINARY_SEARCH -> {
-                return new BBinaria();
+                return new BinarySearch();
             }
             case LINEAR_SEARCH -> {
-                return new BLineal();
+                return new LinearSearch();
             }
             default -> throw new IllegalArgumentException("La opcion no es valida");
         }

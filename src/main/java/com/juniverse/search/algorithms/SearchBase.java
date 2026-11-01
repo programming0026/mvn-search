@@ -2,12 +2,17 @@ package com.juniverse.search.algorithms;
 
 import java.text.DecimalFormat;
 
+import java.util.logging.Logger;
+import com.juniverse.search.AppLogger;
+import java.util.Arrays;
 /**
  * Clase base de los algoritmos de búsqueda de enteros y de las utilidades para mostrar resultados.
  *
  * @author linux
  */
 public abstract class SearchBase {
+    private static final Logger LOGGER = AppLogger.get(SearchBase.class);
+
 
 
     /**
@@ -31,10 +36,8 @@ public abstract class SearchBase {
      * @param nums arreglo a mostrar
      */
     public void print(int nums[]) {
-        for (int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i] + " ");
-        }
-        System.out.println();
+        LOGGER.info(Arrays.toString(nums));
+        LOGGER.info("");
     }
 
     /**
@@ -43,14 +46,14 @@ public abstract class SearchBase {
      * @param pos índice a resaltar
      */
     public void print(int nums[], int pos) {
-        System.out.println("Array    Posicion");
+        LOGGER.info("Array    Posicion");
         DecimalFormat d = new DecimalFormat("00");
 
         for (int i = 0; i < nums.length; i++) {
             if (i == pos) {
-                System.out.println(d.format(nums[i]) + "  -->  " + d.format((i + 1)));
+                LOGGER.info(d.format(nums[i]) + "  -->  " + d.format((i + 1)));
             } else {
-                System.out.println(d.format(nums[i]) + "       " + d.format((i + 1)));
+                LOGGER.info(d.format(nums[i]) + "       " + d.format((i + 1)));
             }
         }
     }
@@ -61,19 +64,19 @@ public abstract class SearchBase {
      * @param pos índices a resaltar
      */
     public void print(int nums[], Integer pos[]) {
-        System.out.println("Array    Posicion");
+        LOGGER.info("Array    Posicion");
         DecimalFormat d = new DecimalFormat("00");
         boolean bFind;
         for (int i = 0; i < nums.length; i++) {
             bFind = false;
             for (int j = 0; j < pos.length; j++) {
                 if (i == pos[j]) {
-                    System.out.println(d.format(nums[i]) + "  -->  " + d.format((i + 1)));
+                    LOGGER.info(d.format(nums[i]) + "  -->  " + d.format((i + 1)));
                     bFind = true;
                 }
             }
             if (!bFind) {
-                System.out.println(d.format(nums[i]) + "       " + d.format((i + 1)));
+                LOGGER.info(d.format(nums[i]) + "       " + d.format((i + 1)));
             }
         }
     }
