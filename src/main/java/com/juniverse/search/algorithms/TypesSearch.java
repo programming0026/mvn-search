@@ -4,7 +4,7 @@ package com.juniverse.search.algorithms;
 /**
  * Algoritmos de búsqueda disponibles.
  *
- * @author linux
+ * @author Java Universe
  */
 public enum TypesSearch {
   BINARY_SEARCH,

@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Clase base de los algoritmos de búsqueda de enteros y de las utilidades para mostrar resultados.
  *
- * @author linux
+ * @author Java Universe
  */
 public abstract class SearchBase {
     private static final Logger LOGGER = AppLogger.get(SearchBase.class);

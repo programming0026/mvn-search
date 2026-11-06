@@ -3,7 +3,7 @@ package com.juniverse.search.algorithms;
 /**
  * Fábrica que crea el algoritmo de búsqueda según {@link TypesSearch}.
  *
- * @author linux
+ * @author Java Universe
  */
 public final class SearchFactory {
 

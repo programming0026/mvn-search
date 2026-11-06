@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 /**
  * Busca valores (únicos y repetidos) con búsqueda binaria y lineal e imprime las posiciones.
  *
- * @author linux
+ * @author Java Universe
  */
 public class Main {
     private static final Logger LOGGER = AppLogger.get(Main.class);

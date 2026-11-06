@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Búsqueda lineal: recorre el arreglo de principio a fin. Funciona con datos sin ordenar. O(n).
  *
- * @author linux
+ * @author Java Universe
  */
 public class LinearSearch extends SearchBase {
 

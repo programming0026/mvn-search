@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Búsqueda binaria sobre un arreglo ORDENADO de menor a mayor. O(log n).
  *
- * @author linux
+ * @author Java Universe
  */
 public class BinarySearch extends SearchBase {
 
